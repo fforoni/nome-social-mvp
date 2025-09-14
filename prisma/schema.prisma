@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Armazena a sessão de verificação temporária que liga uma carteira a um código.
+model VerificationSession {
+  id              String   @id @default(cuid())
+  walletAddress   String
+  referenceCode   String   @unique
+  expiresAt       DateTime
+  createdAt       DateTime @default(now())
+}
+
+// Armazena os hashes de CPFs que já receberam um SBT, garantindo unicidade.
+model UniqueCpfHash {
+  id        String @id @default(cuid())
+  cpfHash   String @unique
+  createdAt DateTime @default(now())
+}
+
+// Armazena os IDs das transações PIX já processadas para garantir idempotência.
+model ProcessedPixTransaction {
+  id          String @id @default(cuid())
+  endToEndId  String @unique
+  createdAt   DateTime @default(now())
+}

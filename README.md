@@ -1,4 +1,4 @@
-# nome.social (MVP - ETH Latam 2025)
+# nome.social (MVP)
 
 > Sua identidade digital na nova internet. Verificada pelo Brasil.
 

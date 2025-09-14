@@ -1,0 +1,35 @@
+{
+  "name": "brazilian-identity-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Brazilian identity verification via PIX-to-SBT mint",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ethers": "^6.8.1",
+    "wagmi": "^1.4.12",
+    "@wagmi/core": "^1.4.12",
+    "viem": "^1.19.11",
+    "@rainbow-me/rainbowkit": "^1.3.5",
+    "axios": "^1.6.0",
+    "react-hot-toast": "^2.4.1",
+    "lucide-react": "^0.294.0",
+    "@headlessui/react": "^1.7.17",
+    "clsx": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.3",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.6"
+  }
+}

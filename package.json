@@ -1,0 +1,38 @@
+{
+  "name": "nome-social-mvp",
+  "version": "1.0.0",
+  "description": "Brazilian identity verification via PIX-to-SBT mint system",
+  "main": "index.js",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:contracts && npm run build:backend && npm run build:frontend",
+    "build:contracts": "cd contracts && npx hardhat compile",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:contracts && npm run test:backend",
+    "test:contracts": "cd contracts && npx hardhat test",
+    "test:backend": "cd backend && npm test",
+    "deploy:contracts": "cd contracts && npx hardhat run scripts/deploy.js --network base",
+    "verify:contracts": "cd contracts && npx hardhat verify --network base"
+  },
+  "keywords": [
+    "brazilian-identity",
+    "pix",
+    "soulbound-token",
+    "cpf-verification",
+    "base-l2",
+    "blockchain"
+  ],
+  "author": "Nome Social MVP Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fforoni/nome-social-mvp.git"
+  },
+  "workspaces": [
+    "contracts",
+    "backend",
+    "frontend"
+  ]
+}
